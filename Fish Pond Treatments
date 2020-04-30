@@ -1,0 +1,22 @@
+/// Arcade expression for displaying treatments for Fish Pond Map 2020 on AGOL and Collector
+/// 
+
+if (isEmpty($feature.Product)){
+var status = "New";
+}
+else if($feature.Product == 'Altosid XR (EPA#2724-421)' && (datediff(now(), $feature.Date, 'days'))<150){
+var status = "New";
+}
+Else if($feature.Product == 'Altosid Briquets (EPA#2724-375)' && (datediff(now(), $feature.Date, 'days'))<28){
+var status = "New";
+}
+else if($feature.Product == 'Altosid WSP (EPA#2724-448)' && (datediff(now(), $feature.Date, 'days'))<28){
+var status = "New";
+}
+else if($feature.Product == 'Vectolex WSP (EPA#73049-20)' && (datediff(now(), $feature.Date, 'days'))<28){
+var status = "New";
+}
+else {
+var status = "old";
+}
+return status
