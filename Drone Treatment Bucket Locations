@@ -1,0 +1,23 @@
+//dynamic symbology based on label rates for drone spray bucket locations. this does not differentiate based on chemical.
+if($feature.LBS_Per_Acre < 4){
+var status = "Low App Rate";
+}
+else if($feature.LBS_Per_Acre >= 4 && $feature.LBS_Per_Acre < 7){
+var status = "Mid App Rate";
+}
+else if($feature.LBS_Per_Acre >= 7 && $feature.LBS_Per_Acre < 9){
+var status = "Optimal App Rate";
+}
+else if($feature.LBS_Per_Acre >= 9 && $feature.LBS_Per_Acre < 15){
+var status = "High App Rate";
+}
+else if($feature.LBS_Per_Acre >= 15 && $feature.LBS_Per_Acre < 20){
+var status = "Very High App Rate";
+}
+else if($feature.LBS_Per_Acre >= 20){
+var status = "Out of Label Range";
+}
+else {
+var status = "error";
+}
+return status
