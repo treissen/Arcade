@@ -1,7 +1,7 @@
 //Days passed and Product Used And Sample and drone treatment
 
 
-if(isEmpty($feature.Acres) && (datediff(now(), $feature.Date, 'days'))<10){
+if(isEmpty($feature.Acres) && (datediff(now(), $feature.Date, 'days'))<7){
 var status = "Sample";
 }
 
