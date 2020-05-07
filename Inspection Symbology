@@ -3,10 +3,6 @@ var time1 = Date($feature["Date"])
 if(DateDiff(Now(), time1, 'days')<6){
 Var Status = "New";
 }
-else if(DateDiff(Today(), time1, 'days')>=6){
+else
 var Status = "Old";
-}
-else{
-var Status = "Current";
-}
 return Status
