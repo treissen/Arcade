@@ -1,0 +1,85 @@
+///Days passed and Product Used And Sample and drone treatment and expired treatments for less than one week
+
+
+if(isEmpty($feature.Acres) && (datediff(now(), $feature.Date, 'days'))<10){
+var status = "Sample";
+}
+
+else if($feature.Method == 'UAS' && ($feature.Product == 'Natular G (EPA#8329-80)' && (datediff(now(), $feature.Date, 'days'))<7)){
+var status = "NewDrone";
+}
+else if($feature.Method == 'UAS' && ($feature.Product == 'Vectobac GR (EPA#73049-486)' && (datediff(now(), $feature.Date, 'days'))<7)){
+var status = "NewDrone";
+}
+else if($feature.Method == 'UAS' && ($feature.Product == 'Vectobac 12AS (EPA#73049-38)' && (datediff(now(), $feature.Date, 'days'))<7)){
+var status = "NewDrone";
+}
+else if($feature.Method == 'UAS' && ($feature.Product == 'Kontrol Oil (EPA#73748-10)' && (datediff(now(), $feature.Date, 'days'))<7)){
+var status = "NewDrone";
+}
+else if($feature.Method == 'UAS' && ($feature.Product == 'Abate 1% (EPA#8329-17)' && (datediff(now(), $feature.Date, 'days'))<7)){
+var status = "NewDrone";
+}
+else if($feature.Method == 'UAS' && ($feature.Product == 'VectoMax FG (EPA#73049-429)' && (datediff(now(), $feature.Date, 'days'))<22)){
+var status = "NewDrone";
+}
+else if($feature.Method == 'UAS' && ($feature.Product == 'Duplex G (EPA#89459-93)' && (datediff(now(), $feature.Date, 'days'))<26)){
+var status = "NewDrone";
+}
+else if($feature.Method == 'UAS' && ($feature.Product == 'Natular G30 (EPA#8329-83)' && (datediff(now(), $feature.Date, 'days'))<22)){
+var status = "NewDrone";
+}
+else if($feature.Product == 'Natular G (EPA#8329-80)' && (datediff(now(), $feature.Date, 'days'))<7){
+var status = "New";
+}
+Else if($feature.Product == 'Vectobac GR (EPA#73049-486)' && (datediff(now(), $feature.Date, 'days'))<7){
+var status = "New";
+}
+else if($feature.Product == 'Vectobac 12AS (EPA#73049-38)' && (datediff(now(), $feature.Date, 'days'))<7){
+var status = "New";
+}
+else if($feature.Product == 'Kontrol Oil (EPA#73748-10)' && (datediff(now(), $feature.Date, 'days'))<7){
+var status = "New";
+}
+else if($feature.Product == 'Abate 1% (EPA#8329-17)' && (datediff(now(), $feature.Date, 'days'))<7){
+var status = "New";
+}
+else if($feature.Product == 'VectoMax FG (EPA#73049-429)' && (datediff(now(), $feature.Date, 'days'))<22){
+var status = "New";
+}
+else if($feature.Product == 'Duplex G (EPA#89459-93)' && (datediff(now(), $feature.Date, 'days'))<26){
+var status = "New";
+}
+else if($feature.Product == 'Natular G30 (EPA#8329-83)' && (datediff(now(), $feature.Date, 'days'))<22){
+var status = "New";
+}
+///Next lines of code are for symbolizing treatments that have been expired for less than a week
+
+else if($feature.Product == 'Natular G (EPA#8329-80)' && ((datediff(now(), $feature.Date, 'days')>7) && (datediff(now(), $feature.Date, 'days'))<14)){
+var status = "Expired";
+}
+Else if($feature.Product == 'Vectobac GR (EPA#73049-486)' && ((datediff(now(), $feature.Date, 'days')>7) && (datediff(now(), $feature.Date, 'days'))<14)){
+var status = "Expired";
+}
+else if($feature.Product == 'Vectobac 12AS (EPA#73049-38)' && ((datediff(now(), $feature.Date, 'days')<7) && (datediff(now(), $feature.Date, 'days'))<14)){
+var status = "Expired";
+}
+else if($feature.Product == 'Kontrol Oil ((EPA#73748-10)' && ((datediff(now(), $feature.Date, 'days')<7) && (datediff(now(), $feature.Date, 'days'))<14)){
+var status = "Expired";
+}
+else if($feature.Product == 'Abate 1% (EPA#8329-17)' && ((datediff(now(), $feature.Date, 'days')<7) && (datediff(now(), $feature.Date, 'days'))<14)){
+var status = "Expired";
+}
+else if($feature.Product == 'VectoMax FG (EPA#73049-429)' && ((datediff(now(), $feature.Date, 'days')<22) && (datediff(now(), $feature.Date, 'days'))<29)){
+var status = "Expired";
+}
+else if($feature.Product == 'Duplex G (EPA#89459-93)' && ((datediff(now(), $feature.Date, 'days')<26) && (datediff(now(), $feature.Date, 'days'))<33)){
+var status = "Expired";
+}
+else if($feature.Product == 'Natular G30 (EPA#8329-83)' && ((datediff(now(), $feature.Date, 'days')<22) && (datediff(now(), $feature.Date, 'days'))<29)){
+var status = "Expired";
+}
+else {
+var status = "old";
+}
+return status
