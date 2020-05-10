@@ -1,8 +1,0 @@
-// shows lbs and chemical used, if no chem is used shows sample
-
-
-
-var Product = DomainName($feature,"Product");
-var LBS = ($feature.AmountUsed);
-var Tech = DomainName($feature,"Tech")
-iif(IsEmpty($feature.AmountUsed), "sample", (LBS + ' lbs of ' + Product))
