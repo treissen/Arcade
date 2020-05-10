@@ -1,6 +1,7 @@
+/// this works, but do not uxe "test" button in arcade window
 var LBS = $feature.AmountUsed
 var Product = DomainName($feature,"Product")
-if(isEmpty($feature.Acres) && datediff(now(), $feature.Date, 'days')>7){
+if(isEmpty($feature.Acres) && datediff(now(), $feature.Date, 'days')<7){
     var status = "sample";
 }
 /// New Labels
